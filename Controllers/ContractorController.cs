@@ -1,16 +1,16 @@
 using System;
-using Contractr.Models;
-using Contractr.Services;
+using Contractor.Models;
+using Contractor.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Contractr.Controllers
+namespace Contractor.Controllers
 {
   [ApiController]
   [Route("api/[controller]")]
-  public class ContractrController : ControllerBase
+  public class ContractorController : ControllerBase
   {
-    private readonly ContractrService _service;
-    public ContractrController(ContractrService ps)
+    private readonly ContractorService _service;
+    public ContractorController(ContractorService ps)
     {
       _service = ps;
     }

@@ -10,12 +10,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Contractr.Repositories;
-using Contractr.Services;
+using Contractor.Repositories;
+using Contractor.Services;
 using System.Data;
 using MySqlConnector;
 
-namespace contractr
+namespace Contractor
 {
   public class Startup
   {
@@ -33,8 +33,8 @@ namespace contractr
 
       services.AddScoped<IDbConnection>(x => CreateDbConnection());
 
-      services.AddTransient<ContractrService>();
-      services.AddTransient<ContractrRepository>();
+      services.AddTransient<ContractorService>();
+      services.AddTransient<ContractorRepository>();
 
     }
 

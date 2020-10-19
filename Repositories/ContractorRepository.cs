@@ -1,15 +1,15 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using Contractr.Models;
+using Contractor.Models;
 using Dapper;
 
-namespace Contractr.Repositories
+namespace Contractor.Repositories
 {
-  public class ContractrRepository
+  public class ContractorRepository
   {
     private readonly IDbConnection _db;
-    public ContractrRepository(IDbConnection db)
+    public ContractorRepository(IDbConnection db)
     {
       _db = db;
     }

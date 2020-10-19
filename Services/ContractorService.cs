@@ -1,15 +1,15 @@
 using System;
 using System.Collections.Generic;
-using Contractr.Models;
-using Contractr.Repositories;
+using Contractor.Models;
+using Contractor.Repositories;
 
-namespace Contractr.Services
+namespace Contractor.Services
 {
-  public class ContractrService
+  public class ContractorService
   {
-    private readonly ContractrRepository _repo;
+    private readonly ContractorRepository _repo;
 
-    public ContractrService(ContractrRepository repo)
+    public ContractorService(ContractorRepository repo)
     {
       _repo = repo;
     }
