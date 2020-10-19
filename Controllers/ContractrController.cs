@@ -3,30 +3,33 @@ using Contractr.Models;
 using Contractr.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Contractr.Contractr
+namespace Contractr.Controllers
 {
   [ApiController]
   [Route("api/[controller]")]
-  public class ContractrController : ControllerBase{
+  public class ContractrController : ControllerBase
+  {
     private readonly ContractrService _service;
-    public ContractrController(ContractrService ps){
+    public ContractrController(ContractrService ps)
+    {
       _service = ps;
     }
 
-    [httpGet]
-    public ActionResult<Contractr> Get(){
+    [HttpGet]
+    public ActionResult<Contractor> Get()
+    {
       try
       {
-          return Ok(_service.GetAll());
+        return Ok(_service.GetAll());
       }
       catch (Exception e)
       {
-          
-          return BadRequest(e.Message);
+
+        return BadRequest(e.Message);
       }
     }
-      [HttpGet("{id}")] 
-    public ActionResult<Contractr> Get(int id)
+    [HttpGet("{id}")]
+    public ActionResult<Contractor> Get(int id)
     {
       try
       {

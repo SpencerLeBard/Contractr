@@ -1,0 +1,5 @@
+C:\source\codeworks\week11\contractr\obj\Debug\netcoreapp3.1\contractr.csprojAssemblyReference.cache
+C:\source\codeworks\week11\contractr\obj\Debug\netcoreapp3.1\contractr.AssemblyInfoInputs.cache
+C:\source\codeworks\week11\contractr\obj\Debug\netcoreapp3.1\contractr.AssemblyInfo.cs
+C:\source\codeworks\week11\contractr\obj\Debug\netcoreapp3.1\contractr.csproj.CoreCompileInputs.cache
+C:\source\codeworks\week11\contractr\obj\Debug\netcoreapp3.1\contractr.MvcApplicationPartsAssemblyInfo.cache
