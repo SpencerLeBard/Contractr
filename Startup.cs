@@ -10,8 +10,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-// using Contractr.Repositories;
+using Contractr.Repositories;
 using Contractr.Services;
+using System.Data;
+using MySqlConnector;
 
 namespace contractr
 {
@@ -29,14 +31,19 @@ namespace contractr
     {
       services.AddControllers();
 
+      services.AddScoped<IDbConnection>(x => CreateDbConnection());
+
       services.AddTransient<ContractrService>();
-      //  services.AddTransient<ProductsRepository>();
-
-
 
     }
 
-    // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+    private IDbConnection CreateDbConnection()
+    {
+      var connectionString = Configuration.GetSection("DB").GetValue<string>("gearhost");
+      return new MySqlConnection(connectionString);
+    }
+
+
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
       if (env.IsDevelopment())
@@ -57,3 +64,4 @@ namespace contractr
     }
   }
 }
+
