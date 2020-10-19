@@ -1,0 +1,1 @@
+SELECT * FROM `contractr`.`contractor` LIMIT 1000;

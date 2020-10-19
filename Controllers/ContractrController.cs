@@ -17,6 +17,7 @@ namespace Contractr.Controllers
 
     [HttpGet]
     public ActionResult<Contractor> Get()
+
     {
       try
       {

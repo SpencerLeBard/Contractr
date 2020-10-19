@@ -16,7 +16,8 @@ namespace Contractr.Repositories
     internal IEnumerable<Contractor> GetAll()
     {
       string sql = "SELECT * FROM contractor";
-      return _db.Query<Contractor>(sql);
+      var contractors = _db.Query<Contractor>(sql);
+      return contractors;
     }
     internal Contractor GetById(int id)
     {
