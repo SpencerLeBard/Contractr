@@ -10,12 +10,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Contractor.Repositories;
-using Contractor.Services;
+using ContractorFile.Repositories;
+using ContractorFile.Services;
 using System.Data;
 using MySqlConnector;
 
-namespace Contractor
+namespace ContractorFile
 {
   public class Startup
   {

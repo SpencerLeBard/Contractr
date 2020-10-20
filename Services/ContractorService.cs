@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using Contractor.Models;
-using Contractor.Repositories;
+using ContractorFile.Models;
+using ContractorFile.Repositories;
 
-namespace Contractor.Services
+namespace ContractorFile.Services
 {
   public class ContractorService
   {

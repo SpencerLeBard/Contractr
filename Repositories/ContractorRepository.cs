@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using Contractor.Models;
+using ContractorFile.Models;
 using Dapper;
 
-namespace Contractor.Repositories
+namespace ContractorFile.Repositories
 {
   public class ContractorRepository
   {

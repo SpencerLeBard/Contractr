@@ -1,9 +1,9 @@
 using System;
-using Contractor.Models;
-using Contractor.Services;
+using ContractorFile.Models;
+using ContractorFile.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Contractor.Controllers
+namespace ContractorFile.Controllers
 {
   [ApiController]
   [Route("api/[controller]")]
