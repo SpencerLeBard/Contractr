@@ -3,22 +3,23 @@
 /* DANGER THIS WILL DESTROY THE TABLE AND ALL ITS DATA PERMENANTLY */
 /* DROP TABLE contractor; */
 
--- CREATE TABLE contractor
+-- CREATE TABLE jobs
 -- ( 
---   id INT NOT NULL AUTO_INCREMENT,
---   title VARCHAR(255) NOT NULL,
---   description VARCHAR(255),
---   price DECIMAL(6, 2) NOT NULL,
+--   id INT AUTO_INCREMENT,
+--   name VARCHAR(255) NOT NULL,
+--   address VARCHAR(255),
+--   skills VARCHAR(255),
 
 --   PRIMARY KEY (id)
 -- );
 
 /* POST */
--- INSERT INTO contractor (location, description) VALUES ("Seattle", "water everywhere");
+-- INSERT INTO jobs (name, address, skills) VALUES ("Spencer", "Boise92829", "supafly");
+-- INSERT INTO jobs (name, address, skills) VALUES ("Hank", "Mangy", "Trasient");
 
 
 /* GET ALL */
-/* SELECT * FROM contractor; */
+-- SELECT * FROM jobs;
 
 /* GET BY _____ */
 -- SELECT * FROM contractor WHERE id = 2;

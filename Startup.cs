@@ -36,6 +36,8 @@ namespace ContractorFile
 
       services.AddTransient<ContractorService>();
       services.AddTransient<ContractorRepository>();
+      services.AddTransient<JobService>();
+      services.AddTransient<JobRepository>();
 
     }
 
