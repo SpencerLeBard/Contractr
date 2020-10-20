@@ -26,6 +26,31 @@ namespace ContractorFile.Services
       }
       return data;
     }
+    internal Contractor Create(Contractor newContractor)
+    {
+      return _repo.Create(newContractor);
+    }
 
+    internal Contractor Edit(Contractor updated)
+    {
+      var data = GetById(updated.Id);
+
+      updated.Description = updated.Description != null ? updated.Description : data.Description;
+      updated.Location = updated.Location != null && updated.Location.Length > 2 ? updated.Location : data.Location;
+
+
+      return _repo.Edit(updated);
+    }
+    //   internal IEnumerable<WishListProductViewModel> GetProductsByListId(int id)
+    // {
+    //   return _repo.GetProductsByListId(id);
+    // }
+
+    internal string Delete(int id)
+    {
+      var data = GetById(id);
+      _repo.Delete(id);
+      return "delorted";
+    }
   }
 }

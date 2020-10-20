@@ -32,6 +32,8 @@ namespace ContractorFile
 
       services.AddScoped<IDbConnection>(x => CreateDbConnection());
 
+      //NOTE SERVICE & REPOSITORY 
+
       services.AddTransient<ContractorService>();
       services.AddTransient<ContractorRepository>();
 
