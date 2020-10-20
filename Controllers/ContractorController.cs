@@ -10,9 +10,9 @@ namespace ContractorFile.Controllers
   public class ContractorController : ControllerBase
   {
     private readonly ContractorService _service;
-    public ContractorController(ContractorService ps)
+    public ContractorController(ContractorService service)
     {
-      _service = ps;
+      _service = service;
     }
 
     [HttpGet]
