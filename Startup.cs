@@ -82,7 +82,7 @@ namespace ContractorFile
       if (env.IsDevelopment())
       {
         app.UseDeveloperExceptionPage();
-        app.UseCors("CorsDevPolicy")
+        app.UseCors("CorsDevPolicy");
       }
 
       Auth0ProviderExtension.ConfigureKeyMap(new List<string>() { "id" });

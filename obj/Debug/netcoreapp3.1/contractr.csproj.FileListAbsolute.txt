@@ -21,3 +21,14 @@ C:\source\codeworks\week11\contractr\obj\Debug\netcoreapp3.1\staticwebassets\con
 C:\source\codeworks\week11\contractr\obj\Debug\netcoreapp3.1\contractr.dll
 C:\source\codeworks\week11\contractr\obj\Debug\netcoreapp3.1\contractr.pdb
 C:\source\codeworks\week11\contractr\obj\Debug\netcoreapp3.1\contractr.genruntimeconfig.cache
+C:\source\codeworks\week11\contractr\bin\Debug\netcoreapp3.1\wwwsrc\package-lock.json
+C:\source\codeworks\week11\contractr\bin\Debug\netcoreapp3.1\wwwsrc\package.json
+C:\source\codeworks\week11\contractr\bin\Debug\netcoreapp3.1\CodeWorks.Auth0Provider.dll
+C:\source\codeworks\week11\contractr\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\source\codeworks\week11\contractr\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\source\codeworks\week11\contractr\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\source\codeworks\week11\contractr\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\source\codeworks\week11\contractr\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\source\codeworks\week11\contractr\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\source\codeworks\week11\contractr\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\source\codeworks\week11\contractr\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll

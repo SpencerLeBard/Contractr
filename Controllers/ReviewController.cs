@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ContractorFile.Controllers
 {
   [ApiController]
-  [Authorize]
+  // [Authorize]
 
   [Route("api/[controller]")]
   public class ReviewController : ControllerBase
