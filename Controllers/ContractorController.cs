@@ -46,7 +46,7 @@ namespace ContractorFile.Controllers
         return BadRequest(e.Message);
       }
     }
-    [HttpGet("{id}/reviews")] // api/contractor/:id/reviews
+    [HttpGet("{id}/reviews")] // NOTE api/contractor/:id/reviews
     public ActionResult<IEnumerable<Review>> GetReviews(int id)
     {
       try

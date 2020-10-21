@@ -1,11 +1,14 @@
 using System;
 using ContractorFile.Models;
 using ContractorFile.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ContractorFile.Controllers
 {
   [ApiController]
+  [Authorize]
+
   [Route("api/[controller]")]
   public class ReviewController : ControllerBase
   {
