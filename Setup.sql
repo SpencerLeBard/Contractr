@@ -3,23 +3,30 @@
 /* DANGER THIS WILL DESTROY THE TABLE AND ALL ITS DATA PERMENANTLY */
 /* DROP TABLE contractor; */
 
--- CREATE TABLE jobs
+-- CREATE TABLE reviews
 -- ( 
 --   id INT AUTO_INCREMENT,
---   name VARCHAR(255) NOT NULL,
---   address VARCHAR(255),
---   skills VARCHAR(255),
+--   title VARCHAR(255) NOT NULL,
+--   body VARCHAR(255) NOT NULL,
+--   rating INT,
+--   datee VARCHAR(255),
+--   ContractorId INT,
 
---   PRIMARY KEY (id)
+--     INDEX (ContractorId),
+
+--     PRIMARY KEY (id),
+--     FOREIGN KEY (ContractorId)
+--     REFERENCES reviews (id)
+--     ON DELETE CASCADE
 -- );
 
 /* POST */
--- INSERT INTO jobs (name, address, skills) VALUES ("Spencer", "Boise92829", "supafly");
--- INSERT INTO jobs (name, address, skills) VALUES ("Hank", "Mangy", "Trasient");
+-- INSERT INTO reviews (title, body, rating, datee, ContractorId) VALUES ("help", "please", 5, "07/", 1);
+-- INSERT INTO reviews (title, body, rating, datee, ContractorId) VALUES ("godhelp", "prettyplease", 5, "datataa", 1 );
 
 
 /* GET ALL */
--- SELECT * FROM jobs;
+SELECT * FROM reviews;
 
 /* GET BY _____ */
 -- SELECT * FROM contractor WHERE id = 2;

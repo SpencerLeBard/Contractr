@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using ContractorFile.Models;
 using ContractorFile.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -8,20 +7,15 @@ namespace ContractorFile.Controllers
 {
   [ApiController]
   [Route("api/[controller]")]
-  public class ContractorController : ControllerBase
-
+  public class ReviewController : ControllerBase
   {
-    private readonly ReviewService _reviewService;
-    private readonly ContractorService _service;
-    public ContractorController(ContractorService service, ReviewService reviewService)
+    private readonly ReviewService _service;
+    public ReviewController(ReviewService service)
     {
       _service = service;
-      _reviewService = reviewService;
-
     }
-
     [HttpGet]
-    public ActionResult<Contractor> Get()
+    public ActionResult<Review> Get()
 
     {
       try
@@ -35,7 +29,7 @@ namespace ContractorFile.Controllers
       }
     }
     [HttpGet("{id}")]
-    public ActionResult<Contractor> Get(int id)
+    public ActionResult<Review> Get(int id)
     {
       try
       {
@@ -46,34 +40,20 @@ namespace ContractorFile.Controllers
         return BadRequest(e.Message);
       }
     }
-    [HttpGet("{id}/reviews")] // api/contractor/:id/reviews
-    public ActionResult<IEnumerable<Review>> GetReviews(int id)
-    {
-      try
-      {
-        return Ok(_reviewService.GetByContractorId(id));
-      }
-      catch (Exception e)
-      {
-        return BadRequest(e.Message);
-      }
-    }
-
     [HttpPost]
-    public ActionResult<Contractor> Create([FromBody] Contractor newContractor)
+    public ActionResult<Review> Create([FromBody] Review newReview)
     {
       try
       {
-        return Ok(_service.Create(newContractor));
+        return Ok(_service.Create(newReview));
       }
       catch (Exception e)
       {
         return BadRequest(e.Message);
       }
     }
-
     [HttpPut("{id}")]
-    public ActionResult<Contractor> Edit([FromBody] Contractor updated, int id)
+    public ActionResult<Review> Edit([FromBody] Review updated, int id)
     {
       try
       {
@@ -86,7 +66,7 @@ namespace ContractorFile.Controllers
       }
     }
     [HttpDelete("{id}")]
-    public ActionResult<Contractor> Delete(int id)
+    public ActionResult<Review> Delete(int id)
     {
       try
       {
