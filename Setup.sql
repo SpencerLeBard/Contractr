@@ -20,13 +20,26 @@
 --     ON DELETE CASCADE
 -- );
 
+CREATE TABLE profiles
+(
+  id VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  name VARCHAR(255),
+  picture VARCHAR(255),
+  PRIMARY KEY (id)
+);
+
+/*POSTPROFILE*/ 
+-- INSERT INTO profiles (id, email, name, picture) VALUES ("", "spencer@spencer.com", "spencer", "", 1);
+
+
 /* POST */
 -- INSERT INTO reviews (title, body, rating, datee, ContractorId) VALUES ("help", "please", 5, "07/", 1);
 -- INSERT INTO reviews (title, body, rating, datee, ContractorId) VALUES ("godhelp", "prettyplease", 5, "datataa", 1 );
 
 
 /* GET ALL */
-SELECT * FROM reviews;
+-- SELECT * FROM reviews;
 
 /* GET BY _____ */
 -- SELECT * FROM contractor WHERE id = 2;

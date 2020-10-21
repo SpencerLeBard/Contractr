@@ -67,6 +67,8 @@ namespace ContractorFile
       services.AddTransient<JobRepository>();
       services.AddTransient<ReviewService>();
       services.AddTransient<ReviewRepository>();
+      services.AddTransient<ProfilesService>();
+      services.AddTransient<ProfilesRepository>();
 
     }
 
