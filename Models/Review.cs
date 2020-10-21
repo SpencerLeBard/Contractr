@@ -11,5 +11,6 @@ namespace ContractorFile.Models
     public string Rating { get; set; }
     public string Datee { get; set; }
     public string ContractorId { get; set; }
+    public string CreatorId { get; set; }
   }
 }

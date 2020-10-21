@@ -10,5 +10,7 @@ namespace ContractorFile.Models
     [MinLength(3)]
     public string Location { get; set; }
     public string Description { get; set; }
+    public string CreatorId { get; set; }
+    public Profile Creator { get; set; }
   }
 }

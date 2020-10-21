@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using ContractorFile.Models;
 using Dapper;
 
@@ -15,22 +16,41 @@ namespace ContractorFile.Repositories
     }
     internal IEnumerable<Contractor> GetAll()
     {
-      string sql = "SELECT * FROM contractor";
-      var contractors = _db.Query<Contractor>(sql);
-      return contractors;
+      string sql = @"
+      SELECT
+      con.*,
+      prof.*
+      FROM contractors con
+      JOIN profiles prof ON con.creatorId = prof.id
+      ";
+      return _db.Query<Contractor, Profile, Contractor>(sql, (contractor, profile) =>
+    {
+      contractor.Creator = profile;
+      return contractor;
+    }, splitOn: "id");
     }
     internal Contractor GetById(int id)
     {
-      string sql = "SELECT * FROM contractor WHERE id = @id LIMIT 1";
-      return _db.QueryFirstOrDefault<Contractor>(sql, new { id });
+      string sql = @"
+      SELECT
+      con.*,
+      prof.*
+      FROM contractors con
+      JOIN profiles prof ON con.creatorId = prof.id
+      WHERE id = @id";
+      return _db.Query<Contractor, Profile, Contractor>(sql, (contractor, profile) =>
+          {
+            contractor.Creator = profile;
+            return contractor;
+          }, new { id }, splitOn: "id").FirstOrDefault();
     }
     internal Contractor Create(Contractor newContractor)
     {
       string sql = @"
-      INSERT INTO contractor 
-      (location, description) 
+      INSERT INTO contractors 
+      (loaction, description, creatorId, creatorId) 
       VALUES 
-      (@Location, @Description);
+      (@Location, @Description, @creatorId);
       SELECT LAST_INSERT_ID();";
       int id = _db.ExecuteScalar<int>(sql, newContractor);
       newContractor.Id = id;

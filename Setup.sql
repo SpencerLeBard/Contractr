@@ -20,18 +20,33 @@
 --     ON DELETE CASCADE
 -- );
 
-CREATE TABLE profiles
-(
-  id VARCHAR(255) NOT NULL,
-  email VARCHAR(255) NOT NULL,
-  name VARCHAR(255),
-  picture VARCHAR(255),
-  PRIMARY KEY (id)
-);
+-- CREATE TABLE profiles
+-- (
+--   id VARCHAR(255) NOT NULL,
+--   email VARCHAR(255) NOT NULL,
+--   name VARCHAR(255),
+--   picture VARCHAR(255),
+--   PRIMARY KEY (id)
+-- );
+
+
+-- CREATE TABLE contractors
+-- ( 
+--   id INT NOT NULL AUTO_INCREMENT,
+--   location VARCHAR(255) NOT NULL,
+--   description VARCHAR(255),
+--   creatorId VARCHAR(255) NOT NULL, 
+--   PRIMARY KEY (id),
+--   FOREIGN KEY (creatorId)
+--    REFERENCES profiles (id)
+--    ON DELETE CASCADE
+-- );
 
 /*POSTPROFILE*/ 
 -- INSERT INTO profiles (id, email, name, picture) VALUES ("", "spencer@spencer.com", "spencer", "", 1);
 
+/* POSTContractors */
+-- INSERT INTO contractors (location, description, creatorId) VALUES ("Boise", "pleasehelp" , "d1346e0c-3732-45fc-ad6b-237fa1a0b73d");
 
 /* POST */
 -- INSERT INTO reviews (title, body, rating, datee, ContractorId) VALUES ("help", "please", 5, "07/", 1);

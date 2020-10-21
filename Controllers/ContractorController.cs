@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using CodeWorks.Auth0Provider;
 using ContractorFile.Models;
 using ContractorFile.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ContractorFile.Controllers
@@ -60,10 +63,14 @@ namespace ContractorFile.Controllers
     }
 
     [HttpPost]
-    public ActionResult<Contractor> Create([FromBody] Contractor newContractor)
+    [Authorize]
+    public async Task<ActionResult<Contractor>> Create([FromBody] Contractor newContractor)
     {
       try
       {
+        Profile userInfo = await HttpContext.GetUserInfoAsync<Profile>();
+        newContractor.CreatorId = userInfo.Id;
+        newContractor.Creator = userInfo;
         return Ok(_service.Create(newContractor));
       }
       catch (Exception e)
@@ -73,10 +80,13 @@ namespace ContractorFile.Controllers
     }
 
     [HttpPut("{id}")]
-    public ActionResult<Contractor> Edit([FromBody] Contractor updated, int id)
+    public async Task<ActionResult<Contractor>> Edit([FromBody] Contractor updated, int id)
     {
       try
       {
+        Profile userInfo = await HttpContext.GetUserInfoAsync<Profile>();
+        updated.CreatorId = userInfo.Id;
+        updated.Creator = userInfo;
         updated.Id = id;
         return Ok(_service.Edit(updated));
       }
@@ -86,11 +96,12 @@ namespace ContractorFile.Controllers
       }
     }
     [HttpDelete("{id}")]
-    public ActionResult<Contractor> Delete(int id)
+    public async Task<ActionResult<Contractor>> Delete(int id)
     {
       try
       {
-        return Ok(_service.Delete(id));
+        Profile userInfo = await HttpContext.GetUserInfoAsync<Profile>();
+        return Ok(_service.Delete(id, userInfo.Id));
       }
       catch (Exception e)
       {
