@@ -37,7 +37,8 @@ namespace ContractorFile.Repositories
       prof.*
       FROM contractors con
       JOIN profiles prof ON con.creatorId = prof.id
-      WHERE id = @id";
+      WHERE con.id = @id";
+      //NOTE 'WHERE' LINE YOU SPECIFIY WHERE FIRST ID IS REFERRING TO (CONTRACTORS) cont.id = @id
       return _db.Query<Contractor, Profile, Contractor>(sql, (contractor, profile) =>
           {
             contractor.Creator = profile;
@@ -45,7 +46,7 @@ namespace ContractorFile.Repositories
           }, new { id }, splitOn: "id").FirstOrDefault();
     }
     internal Contractor Create(Contractor newContractor)
-    {
+    {//NOTE why is this working?
       string sql = @"
       INSERT INTO contractors 
       (loaction, description, creatorId, creatorId) 
