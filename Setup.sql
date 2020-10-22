@@ -24,8 +24,8 @@
 -- (
 --   id VARCHAR(255) NOT NULL,
 --   email VARCHAR(255) NOT NULL,
---   name VARCHAR(255),
---   picture VARCHAR(255),
+--   name VARCHAR(255) NOT NULL,
+--   picture VARCHAR(255)NOT NULL,
 --   PRIMARY KEY (id)
 -- );
 
